@@ -13,6 +13,12 @@ class DatasetLoader:
         
         print(f"Downloading dataset {settings.HF_DATASET_NAME} from Hugging Face...")
         dataset = load_dataset(settings.HF_DATASET_NAME, split="train")
+        
+        # Keep only required columns to drastically reduce memory usage
+        required_columns = ['name', 'location', 'cuisines', 'approx_cost(for two people)', 'rate', 'votes', 'rest_type']
+        columns_to_remove = [col for col in dataset.column_names if col not in required_columns]
+        dataset = dataset.remove_columns(columns_to_remove)
+        
         df = dataset.to_pandas()
         
         # Ensure data dir exists
