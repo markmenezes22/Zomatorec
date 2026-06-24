@@ -1,0 +1,8 @@
+pandas
+pydantic
+pydantic-settings
+datasets
+groq
+fastapi
+uvicorn
+pytest

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuminaCuisine | Discovery Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(31, 15, 16, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(229, 189, 190, 0.1);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 15px rgba(255, 81, 104, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(229, 189, 190, 0.2);
+            border-radius: 10px;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        .animate-glow {
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#005233",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#62dda0",
+                      "on-background": "#fbdbdb",
+                      "primary-fixed-dim": "#ffb3b6",
+                      "surface-container-lowest": "#190a0b",
+                      "on-secondary-fixed-variant": "#5e4200",
+                      "secondary-fixed-dim": "#ffba20",
+                      "on-primary": "#68001a",
+                      "surface-container-low": "#281718",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#ffb3b6",
+                      "surface": "#1f0f10",
+                      "surface-dim": "#1f0f10",
+                      "surface-container": "#2c1b1c",
+                      "secondary": "#ffdb9d",
+                      "on-secondary-fixed": "#271900",
+                      "on-primary-container": "#5b0015",
+                      "error-container": "#93000a",
+                      "on-tertiary": "#003822",
+                      "outline": "#ac8889",
+                      "inverse-primary": "#be0037",
+                      "secondary-fixed": "#ffdea8",
+                      "outline-variant": "#5c3f41",
+                      "surface-container-high": "#382526",
+                      "primary-fixed": "#ffdada",
+                      "primary-container": "#ff5168",
+                      "inverse-on-surface": "#3f2b2c",
+                      "inverse-surface": "#fbdbdb",
+                      "tertiary-fixed": "#7ffaba",
+                      "on-surface-variant": "#e5bdbe",
+                      "background": "#1f0f10",
+                      "primary": "#ffb3b6",
+                      "tertiary-container": "#18a56d",
+                      "on-primary-fixed": "#40000c",
+                      "surface-variant": "#433030",
+                      "on-error": "#690005",
+                      "on-surface": "#fbdbdb",
+                      "surface-container-highest": "#433030",
+                      "on-tertiary-fixed": "#002112",
+                      "tertiary": "#62dda0",
+                      "on-secondary-container": "#6b4b00",
+                      "on-primary-fixed-variant": "#920028",
+                      "secondary-container": "#feb700",
+                      "on-secondary": "#412d00",
+                      "surface-bright": "#483435",
+                      "on-tertiary-container": "#00311d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "stack-sm": "12px",
+                      "stack-lg": "48px",
+                      "stack-md": "24px",
+                      "margin-mobile": "20px",
+                      "container-max": "1440px",
+                      "margin-desktop": "80px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-md": ["Outfit"],
+                      "headline-lg-mobile": ["Outfit"],
+                      "label-sm": ["Inter"],
+                      "headline-xl": ["Outfit"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Outfit"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 dark:bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 shadow-2xl shadow-black/40 h-20 flex justify-between items-center px-margin-desktop">
+<div class="flex items-center gap-stack-md">
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary">LuminaCuisine</span>
+<nav class="hidden md:flex gap-base ml-stack-lg">
+<a class="text-primary font-bold font-label-md text-label-md px-4 py-2 hover:bg-primary-container/20 transition-all duration-300 rounded-full" href="#">Discovery</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md px-4 py-2 hover:bg-primary-container/20 transition-all duration-300 rounded-full" href="#">Reservations</a>
+<a class="text-on-surface-variant font-medium font-label-md text-label-md px-4 py-2 hover:bg-primary-container/20 transition-all duration-300 rounded-full" href="#">AI Palate</a>
+</nav>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="relative group hidden lg:block">
+<input class="bg-surface-variant/40 border border-outline-variant/30 rounded-full px-6 py-2 w-64 focus:outline-none focus:border-primary transition-all duration-300 text-body-md font-body-md" placeholder="Search flavors..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2 text-on-surface-variant">search</span>
+</div>
+<div class="flex gap-base">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary-container/20 transition-all"><span class="material-symbols-outlined text-primary">notifications</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary-container/20 transition-all"><span class="material-symbols-outlined text-primary">auto_awesome</span></button>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary/40 p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A sophisticated headshot of a person with glowing neon pink rim lighting against a deep dark background, emphasizing a high-tech and premium profile aesthetic. The lighting is dramatic and cinematic, with soft shadows and sharp highlights on the facial features, conveying a sense of intelligent urban sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtbaazTi7h45qeIBXLO_nGpEfv0Lpu56akm0X2bOp1XfQt7hSmaJ9bLJg5efqjRyk5sEXS9mUIu17jxuQAl6oIBSg26Vee8n1bwkS6JWUJTFtPG7tOBj0q9Tx9haTxxkP5x2lsWqqHtqCl0iz5w26umMqLq92ZK9LGHl6oGLcdj3btdDg0WuWkrXy5zuLMeZYfk24-9-R6ZW-8YRN6cIc8dHqKCno0WiMNdcOf_nlGU3_2W6_VrB1h0Mr_EWFFSSFlkVDv8hOTM1M"/>
+</div>
+</div>
+</header>
+<main class="flex h-full pt-20">
+<!-- Sidebar: Preference Collection Form -->
+<aside class="w-[400px] h-[calc(100vh-80px)] glass-panel border-r border-outline-variant/10 p-stack-md flex flex-col gap-stack-md overflow-y-auto custom-scrollbar">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-md text-headline-md text-primary">Taste Engine</h2>
+<p class="text-on-surface-variant text-label-sm">AI Preference Tuning</p>
+</div>
+<!-- Form Groups -->
+<section class="space-y-stack-md">
+<!-- Location -->
+<div class="space-y-base">
+<label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span> Current Base
+                    </label>
+<div class="relative">
+<input class="w-full bg-surface-container-high/40 border border-outline-variant/20 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none text-body-md" type="text" value="San Francisco, CA"/>
+<div class="absolute top-full left-0 w-full mt-2 glass-panel rounded-xl border border-outline-variant/20 z-10 hidden group-focus-within:block">
+<ul class="p-2 space-y-1">
+<li class="p-2 hover:bg-primary-container/20 rounded-lg cursor-pointer text-body-md">SOMA District</li>
+<li class="p-2 hover:bg-primary-container/20 rounded-lg cursor-pointer text-body-md">North Beach</li>
+<li class="p-2 hover:bg-primary-container/20 rounded-lg cursor-pointer text-body-md">Mission Street</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Budget -->
+<div class="space-y-base">
+<label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">payments</span> Budget Tier
+                    </label>
+<div class="flex gap-base">
+<button class="flex-1 py-2 rounded-xl border border-outline-variant/30 text-on-surface-variant hover:border-secondary hover:text-secondary transition-all">$</button>
+<button class="flex-1 py-2 rounded-xl border-2 border-secondary bg-secondary/10 text-secondary transition-all">$$</button>
+<button class="flex-1 py-2 rounded-xl border border-outline-variant/30 text-on-surface-variant hover:border-secondary hover:text-secondary transition-all">$$$</button>
+</div>
+</div>
+<!-- Cuisines -->
+<div class="space-y-base">
+<label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">restaurant</span> Cuisines
+                    </label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full border border-tertiary text-tertiary text-label-sm font-label-md bg-tertiary/10 cursor-pointer neon-glow">Japanese Fusion</span>
+<span class="px-3 py-1 rounded-full border border-primary text-primary text-label-sm font-label-md bg-primary/10 cursor-pointer neon-glow">Molecular</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant/30 text-on-surface-variant text-label-sm font-label-md hover:border-primary hover:text-primary transition-all cursor-pointer">Nordic</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant/30 text-on-surface-variant text-label-sm font-label-md hover:border-primary hover:text-primary transition-all cursor-pointer">Mediterranean</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant/30 text-on-surface-variant text-label-sm font-label-md hover:border-primary hover:text-primary transition-all cursor-pointer">Oaxacan</span>
+</div>
+</div>
+<!-- Rating -->
+<div class="space-y-base">
+<div class="flex justify-between items-center">
+<label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">star</span> Rating Range
+                        </label>
+<span class="text-secondary font-bold">4.2+</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" max="5" min="0" step="0.1" type="range" value="4.2"/>
+</div>
+<!-- Specific Requirements -->
+<div class="space-y-base">
+<label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">edit_note</span> Specific Notes
+                    </label>
+<textarea class="w-full bg-surface-container-high/40 border border-outline-variant/20 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none text-body-md h-24 resize-none" placeholder="e.g. Quiet environment, vegan-friendly, sunset views..."></textarea>
+</div>
+</section>
+<button class="mt-auto w-full py-4 bg-primary-container text-on-primary-container font-headline-md text-headline-md rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group relative overflow-hidden">
+<span class="relative z-10">Get Recommendations</span>
+<span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">bolt</span>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</button>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-1 overflow-y-auto relative h-full bg-[#0A0A0A]">
+<!-- Background Light Leak / Atmospheric shader -->
+
+<div class="relative z-10 flex flex-col items-center justify-center min-h-full px-margin-desktop py-stack-lg text-center">
+<!-- Hero State Content -->
+<div class="max-w-3xl w-full flex flex-col items-center gap-stack-md">
+<!-- 3D Graphic Placeholder -->
+<div class="w-80 h-80 relative flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 blur-[80px] rounded-full animate-glow"></div>
+
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[120px] text-primary drop-shadow-[0_0_20px_rgba(255,179,182,0.6)]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+</div>
+<div class="space-y-base">
+<h1 class="font-headline-xl text-headline-xl text-on-surface leading-tight">Find your next<br/><span class="text-primary italic">flavor masterpiece.</span></h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl mx-auto">Lumina AI analyzes thousands of flavor profiles and real-time reviews to curate dining experiences that match your exact metabolic mood.</p>
+</div>
+<div class="flex gap-stack-md mt-base">
+<div class="flex flex-col items-center gap-2 p-6 glass-panel rounded-3xl w-48 hover:bg-surface-variant/30 transition-all cursor-default">
+<span class="material-symbols-outlined text-secondary text-4xl">psychology</span>
+<span class="font-label-md text-label-md">Personalized Tuning</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-6 glass-panel rounded-3xl w-48 hover:bg-surface-variant/30 transition-all cursor-default">
+<span class="material-symbols-outlined text-tertiary text-4xl">verified</span>
+<span class="font-label-md text-label-md">Verified Quality</span>
+</div>
+<div class="flex flex-col items-center gap-2 p-6 glass-panel rounded-3xl w-48 hover:bg-surface-variant/30 transition-all cursor-default">
+<span class="material-symbols-outlined text-primary text-4xl">timer</span>
+<span class="font-label-md text-label-md">Instant Booking</span>
+</div>
+</div>
+<!-- Subtle CTA for quick start -->
+<p class="mt-stack-lg text-label-sm text-outline-variant uppercase tracking-widest">Adjust your preferences on the left to begin</p>
+</div>
+</div>
+<!-- Floating Action Button for AI Chat -->
+<button class="fixed bottom-margin-desktop right-margin-desktop w-16 h-16 rounded-full bg-surface-container-high/60 backdrop-blur-3xl border border-outline-variant/30 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-90 transition-all z-50 group">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:rotate-12 transition-transform">chat_bubble</span>
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-secondary rounded-full border-4 border-background"></span>
+</button>
+</section>
+</main>
+<script>
+        // Micro-interactions for chips
+        document.querySelectorAll('.flex-wrap span').forEach(chip => {
+            chip.addEventListener('click', () => {
+                chip.classList.toggle('border-primary');
+                chip.classList.toggle('text-primary');
+                chip.classList.toggle('bg-primary/10');
+            });
+        });
+
+        // Search highlight interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-105');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-105');
+        });
+
+        // Recommendation button logic simulation
+        const recButton = document.querySelector('button.bg-primary-container');
+        recButton.addEventListener('click', () => {
+            const originalContent = recButton.innerHTML;
+            recButton.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Processing Palate...';
+            recButton.disabled = true;
+            setTimeout(() => {
+                recButton.innerHTML = originalContent;
+                recButton.disabled = false;
+            }, 2000);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuminaCuisine | Discovery Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(255, 179, 182, 0.5);
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .typewriter-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #ffb3b6;
+            animation: typewriter 2s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #ffb3b6; }
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#005233",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#62dda0",
+                      "on-background": "#fbdbdb",
+                      "primary-fixed-dim": "#ffb3b6",
+                      "surface-container-lowest": "#190a0b",
+                      "on-secondary-fixed-variant": "#5e4200",
+                      "secondary-fixed-dim": "#ffba20",
+                      "on-primary": "#68001a",
+                      "surface-container-low": "#281718",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#ffb3b6",
+                      "surface": "#1f0f10",
+                      "surface-dim": "#1f0f10",
+                      "surface-container": "#2c1b1c",
+                      "secondary": "#ffdb9d",
+                      "on-secondary-fixed": "#271900",
+                      "on-primary-container": "#5b0015",
+                      "error-container": "#93000a",
+                      "on-tertiary": "#003822",
+                      "outline": "#ac8889",
+                      "inverse-primary": "#be0037",
+                      "secondary-fixed": "#ffdea8",
+                      "outline-variant": "#5c3f41",
+                      "surface-container-high": "#382526",
+                      "primary-fixed": "#ffdada",
+                      "primary-container": "#ff5168",
+                      "inverse-on-surface": "#3f2b2c",
+                      "inverse-surface": "#fbdbdb",
+                      "tertiary-fixed": "#7ffaba",
+                      "on-surface-variant": "#e5bdbe",
+                      "background": "#1f0f10",
+                      "primary": "#ffb3b6",
+                      "tertiary-container": "#18a56d",
+                      "on-primary-fixed": "#40000c",
+                      "surface-variant": "#433030",
+                      "on-error": "#690005",
+                      "on-surface": "#fbdbdb",
+                      "surface-container-highest": "#433030",
+                      "on-tertiary-fixed": "#002112",
+                      "tertiary": "#62dda0",
+                      "on-secondary-container": "#6b4b00",
+                      "on-primary-fixed-variant": "#920028",
+                      "secondary-container": "#feb700",
+                      "on-secondary": "#412d00",
+                      "surface-bright": "#483435",
+                      "on-tertiary-container": "#00311d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "stack-sm": "12px",
+                      "stack-lg": "48px",
+                      "stack-md": "24px",
+                      "margin-mobile": "20px",
+                      "container-max": "1440px",
+                      "margin-desktop": "80px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-md": ["Outfit"],
+                      "headline-lg-mobile": ["Outfit"],
+                      "label-sm": ["Inter"],
+                      "headline-xl": ["Outfit"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Outfit"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 shadow-2xl shadow-black/40 flex justify-between items-center px-80 h-20 w-full">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary dark:text-primary">LuminaCuisine</span>
+</div>
+<div class="flex items-center gap-base">
+<div class="relative hidden lg:block group">
+<input class="bg-surface-variant/30 border border-outline-variant/30 rounded-full py-2 px-10 focus:outline-none focus:ring-1 focus:ring-primary w-64 glass transition-all group-hover:w-80" placeholder="Search refined palate..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant">search</span>
+</div>
+<button class="p-2 rounded-full hover:bg-primary-container/20 transition-all duration-300">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary-container/20 transition-all duration-300">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-primary/40 overflow-hidden ml-4">
+<img class="w-full h-full object-cover" data-alt="A portrait of a sophisticated person with a neon glow border around their head, styled like a luxury digital avatar in a dark, cinematic studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBok8t63FjvxzhcFUqkGmwg2oHA4kEUMSv2EZDfpKJknK_BR_44HW2rQRBzQesf65FZPWvFHdIGssxviVmIgpkKIvTeBVJs-ulsCWNkSyQxg2M6iaUe835WGVRxa-KAFWEwuAixtaFtbdKF_bn51SehbbPmiYXrXrApJp2neP4M3z5aUv5yVMWAHrZldlqEwSqJPPxrmK4U3i-Vu9KhG8aXXas19fzYbcArRDDZ3IWmZNbP0NqDPoikh0TXPAaXGNnQP-h4jUDMB8M"/>
+</div>
+</div>
+</header>
+<main class="pt-20 min-h-screen flex">
+<!-- SideNavBar / Filter Form Panel -->
+<aside class="fixed left-0 top-20 h-[calc(100vh-80px)] w-80 bg-surface-container-low/40 backdrop-blur-xl border-r border-outline-variant/10 flex flex-col py-12 gap-6 overflow-y-auto z-40">
+<div class="px-6 flex flex-col gap-2">
+<h2 class="font-headline-md text-headline-md text-primary">Taste Engine</h2>
+<p class="font-label-md text-label-md text-on-surface-variant/70">AI Preference Tuning</p>
+</div>
+<nav class="flex flex-col">
+<a class="flex items-center gap-4 px-6 py-4 text-tertiary border-r-2 border-tertiary bg-tertiary-container/10 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span>Discovery</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant/70 hover:text-on-surface hover:bg-surface-variant/30 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">event</span>
+<span>Reservations</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant/70 hover:text-on-surface hover:bg-surface-variant/30 transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span>AI Palate</span>
+</a>
+</nav>
+<div class="px-6 mt-4 space-y-6">
+<div class="space-y-4 pt-6 border-t border-outline-variant/10">
+<label class="block text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">Cuisine Profile</label>
+<select class="w-full bg-surface-container/50 border border-outline-variant/30 rounded-xl p-3 glass text-on-surface focus:ring-1 focus:ring-tertiary">
+<option>Japanese Modern</option>
+<option>Nordic Fusion</option>
+<option>Hyper-Local Indian</option>
+</select>
+</div>
+<div class="space-y-4">
+<label class="block text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">Max Budget (for two)</label>
+<input class="w-full accent-tertiary bg-surface-variant/50 h-2 rounded-full appearance-none" type="range"/>
+</div>
+<button class="w-full py-4 bg-tertiary-container text-on-tertiary-container rounded-2xl font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-tertiary/20">
+                    Optimize Taste Profile
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="ml-80 flex-1 px-10 py-12 relative">
+<!-- Summary Banner -->
+<div class="glass bg-surface-container/40 border border-outline-variant/20 rounded-[32px] p-8 mb-10 flex items-start gap-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-50"></div>
+<div class="w-14 h-14 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary shrink-0 relative">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">auto_awesome</span>
+</div>
+<div class="space-y-2 relative">
+<h3 class="font-headline-md text-headline-md text-on-surface">Curated matches for your palate</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl">
+                        Based on your preference for <span class="text-primary font-bold">Japanese in Mumbai</span>, I've curated these matches. I prioritized technical precision in fish handling and umami density.
+                    </p>
+</div>
+</div>
+<!-- Filter Chips Row -->
+<div class="flex items-center gap-3 mb-10 overflow-x-auto pb-4 no-scrollbar">
+<div class="px-5 py-2 rounded-full glass border border-primary text-primary text-label-md flex items-center gap-2 whitespace-nowrap shadow-sm shadow-primary/20">
+                    Japanese <span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="px-5 py-2 rounded-full glass border border-outline-variant/30 text-on-surface-variant text-label-md flex items-center gap-2 whitespace-nowrap hover:border-primary/50 transition-colors">
+                    $$$
+                </div>
+<div class="px-5 py-2 rounded-full glass border border-outline-variant/30 text-on-surface-variant text-label-md flex items-center gap-2 whitespace-nowrap hover:border-primary/50 transition-colors">
+                    Rating 4.5+
+                </div>
+<div class="px-5 py-2 rounded-full glass border border-outline-variant/30 text-on-surface-variant text-label-md flex items-center gap-2 whitespace-nowrap hover:border-primary/50 transition-colors">
+                    South Mumbai
+                </div>
+<div class="ml-auto flex items-center gap-2 text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined">sort</span>
+                    Sort by: AI Match Score
+                </div>
+</div>
+<!-- Restaurant Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="group card-hover-effect glass bg-surface-container/30 border border-outline-variant/20 rounded-[24px] overflow-hidden transition-all duration-500">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Exquisite close-up of premium sashimi platter featuring fatty tuna and uni, garnished with gold leaf and micro-greens. Dark, atmospheric lighting with warm spot-highlights, high-end fine dining aesthetic, 8k resolution, cinematic blur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcNDwOs205sC00-7ayHHRGd_bOi00p5ayUYtOmeDfRJ9FcuwsU-An7RYk0rDjyxI6Bty1bn_1xdKhxkad7pPn3esJfrZmZSmUy-GykgzXhthujNLGvzhvdC86Ny4SO5swYBHUoUHlDQ5VlQPBQr8q9XNNX5-bxGnkfUhFPH_6c1GzqyGgNIxfiQqazem4o6wGYuQI3fIaOLb3vlazPHAHdWYl5260iyzEet9eHO97Zp38rfQh1rKiY0HMvT-AyIgwO0VtT4dx16dw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-bold px-4 py-1.5 rounded-lg text-label-md shadow-xl">
+                            #1 Match
+                        </div>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 p-2 rounded-full text-white cursor-pointer hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</div>
+<div class="absolute bottom-4 left-6 right-6">
+<div class="flex justify-between items-end">
+<div>
+<h4 class="font-headline-md text-headline-md text-white mb-1">Mizumi Omakase</h4>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill">star</span>
+<span class="text-white font-bold">4.9</span>
+<span class="mx-1">•</span>
+<span class="text-white/80">Worli, Mumbai</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white/60 text-label-sm uppercase tracking-tighter">Cost for two</p>
+<p class="text-primary font-bold text-headline-md">₹8,500</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="bg-primary-container/10 border border-primary-container/20 rounded-2xl p-4">
+<div class="flex items-center gap-2 mb-2 text-primary font-bold text-label-md">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+                                AI Palate Match
+                            </div>
+<p class="text-on-surface-variant text-body-md typewriter-text">
+                                Predicted 98% match. Fits your preference for aged soy and low-noise environments.
+                            </p>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-variant/40 rounded-lg text-label-sm text-on-surface-variant border border-outline-variant/10">Omakase</span>
+<span class="px-3 py-1 bg-surface-variant/40 rounded-lg text-label-sm text-on-surface-variant border border-outline-variant/10">Silent Dining</span>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold group/btn">
+                                View Experience
+                                <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group card-hover-effect glass bg-surface-container/30 border border-outline-variant/20 rounded-[24px] overflow-hidden transition-all duration-500">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern Japanese izakaya interior with glowing paper lanterns and a sleek dark wood bar. Chefs in black uniforms preparing charcoal grilled yakitori. Vibrant urban atmosphere, neon amber highlights, high contrast dark photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJLoX0QOjUNGt1DI7PKQquuVnhBoflUSgheBL_lfdLyMHDoRczS00wGC3a1_nKtqtiBJQW758pbv9KvsCzSlHhuw1PSa_XaBW3lRukv6S6bXS-bauKVy5PcQgG-sW-A1k8KkaipatWaB2Pyl83FR9_FoXNqL0wrRTtsj6D-L37cEYf9FLnuLyr-li670UpdBXavnyKSRx53L9JiSvwp6Q_rqBqqQp7dA3DtDWUBZFszqHzC58SY140pYfwKhi3p8JfgQp3shZXAo8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-surface-variant text-on-surface font-bold px-4 py-1.5 rounded-lg text-label-md">
+                            #2 Match
+                        </div>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 p-2 rounded-full text-white cursor-pointer hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</div>
+<div class="absolute bottom-4 left-6 right-6">
+<div class="flex justify-between items-end">
+<div>
+<h4 class="font-headline-md text-headline-md text-white mb-1">Kobo Izakaya</h4>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill">star</span>
+<span class="text-white font-bold">4.7</span>
+<span class="mx-1">•</span>
+<span class="text-white/80">Bandra West</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-white/60 text-label-sm uppercase tracking-tighter">Cost for two</p>
+<p class="text-primary font-bold text-headline-md">₹4,200</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="bg-primary-container/10 border border-primary-container/20 rounded-2xl p-4">
+<div class="flex items-center gap-2 mb-2 text-primary font-bold text-label-md">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+                                AI Palate Match
+                            </div>
+<p class="text-on-surface-variant text-body-md typewriter-text">
+                                Predicted 92% match. Matches your 'vibrant yet exclusive' vibe tag from last month.
+                            </p>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-variant/40 rounded-lg text-label-sm text-on-surface-variant border border-outline-variant/10">Binchotan</span>
+<span class="px-3 py-1 bg-surface-variant/40 rounded-lg text-label-sm text-on-surface-variant border border-outline-variant/10">Mixology</span>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold group/btn">
+                                View Experience
+                                <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading Skeleton Overlay (Hidden by default, shown for demo logic) -->
+<div class="hidden absolute inset-0 z-20 glass bg-background/80 flex items-center justify-center" id="loadingState">
+<div class="text-center space-y-8 max-w-md">
+<div class="relative w-32 h-32 mx-auto">
+<div class="absolute inset-0 rounded-full border-4 border-primary/20 animate-ping"></div>
+<div class="relative w-32 h-32 rounded-full border-4 border-primary flex items-center justify-center bg-surface-container animate-pulse">
+<span class="material-symbols-outlined text-5xl text-primary" data-weight="fill">psychology</span>
+</div>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-white">Refining your palate...</h2>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary animate-[loading_1.5s_ease-in-out_infinite]" style="width: 40%"></div>
+</div>
+<p class="text-on-surface-variant animate-pulse">Synthesizing 4,000+ reviews for Mumbai Japanese cuisine...</p>
+</div>
+</div>
+</div>
+<!-- Empty State Section (Hidden by default) -->
+<div class="hidden py-32 flex flex-col items-center text-center space-y-6" id="emptyState">
+<div class="w-24 h-24 rounded-full bg-surface-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-on-surface-variant/50">search_off</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">No perfect matches found</h3>
+<p class="text-on-surface-variant max-w-xs mx-auto">Your filters are currently too narrow for our AI to guarantee a 90%+ match score. Try broadening your budget.</p>
+</div>
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
+                    Reset Filter Stack
+                </button>
+</div>
+</section>
+</main>
+<script>
+        // Micro-interaction logic for typewriter resets
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const text = card.querySelector('.typewriter-text');
+                if(text) {
+                    text.style.animation = 'none';
+                    text.offsetHeight; // trigger reflow
+                    text.style.animation = null;
+                }
+            });
+        });
+
+        // Dummy toggle for loading/empty states (for designer review)
+        function toggleUIState(state) {
+            const grid = document.querySelector('.grid');
+            const summary = document.querySelector('.glass.mb-10');
+            const loading = document.getElementById('loadingState');
+            const empty = document.getElementById('emptyState');
+
+            loading.classList.add('hidden');
+            empty.classList.add('hidden');
+            grid.classList.remove('opacity-0');
+            summary.classList.remove('opacity-0');
+
+            if(state === 'loading') {
+                loading.classList.remove('hidden');
+                grid.classList.add('opacity-0');
+                summary.classList.add('opacity-0');
+            } else if (state === 'empty') {
+                empty.classList.remove('hidden');
+                grid.classList.add('hidden');
+                summary.classList.add('hidden');
+            }
+        }
+    </script>
+</body></html>

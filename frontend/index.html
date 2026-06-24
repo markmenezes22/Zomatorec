@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LuminaCuisine | AI Discovery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(31, 15, 16, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(229, 189, 190, 0.1); }
+        .neon-glow:hover { box-shadow: 0 0 15px rgba(255, 81, 104, 0.4); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(229, 189, 190, 0.2); border-radius: 10px; }
+        @keyframes pulse-glow { 0%, 100% { opacity: 0.8; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+        .animate-glow { animation: pulse-glow 3s infinite ease-in-out; }
+        .typewriter-text { overflow: hidden; white-space: nowrap; border-right: 2px solid #ffb3b6; animation: typewriter 2s steps(40, end), blink-caret 0.75s step-end infinite; }
+        @keyframes typewriter { from { width: 0; } to { width: 100%; } }
+        @keyframes blink-caret { from, to { border-color: transparent; } 50% { border-color: #ffb3b6; } }
+        .card-hover-effect:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .glass { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+        select option { background-color: #2c1b1c; color: #fbdbdb; }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-tertiary-fixed-variant": "#005233", "on-error-container": "#ffdad6", "tertiary-fixed-dim": "#62dda0", "on-background": "#fbdbdb",
+                "primary-fixed-dim": "#ffb3b6", "surface-container-lowest": "#190a0b", "on-secondary-fixed-variant": "#5e4200", "secondary-fixed-dim": "#ffba20",
+                "on-primary": "#68001a", "surface-container-low": "#281718", "error": "#ffb4ab", "surface-tint": "#ffb3b6", "surface": "#1f0f10",
+                "surface-dim": "#1f0f10", "surface-container": "#2c1b1c", "secondary": "#ffdb9d", "on-secondary-fixed": "#271900", "on-primary-container": "#5b0015",
+                "error-container": "#93000a", "on-tertiary": "#003822", "outline": "#ac8889", "inverse-primary": "#be0037", "secondary-fixed": "#ffdea8",
+                "outline-variant": "#5c3f41", "surface-container-high": "#382526", "primary-fixed": "#ffdada", "primary-container": "#ff5168", "inverse-on-surface": "#3f2b2c",
+                "inverse-surface": "#fbdbdb", "tertiary-fixed": "#7ffaba", "on-surface-variant": "#e5bdbe", "background": "#1f0f10", "primary": "#ffb3b6",
+                "tertiary-container": "#18a56d", "on-primary-fixed": "#40000c", "surface-variant": "#433030", "on-error": "#690005", "on-surface": "#fbdbdb",
+                "surface-container-highest": "#433030", "on-tertiary-fixed": "#002112", "tertiary": "#62dda0", "on-secondary-container": "#6b4b00", "on-primary-fixed-variant": "#920028",
+                "secondary-container": "#feb700", "on-secondary": "#412d00", "surface-bright": "#483435", "on-tertiary-container": "#00311d"
+              },
+              "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+              "spacing": { "base": "8px", "stack-sm": "12px", "stack-lg": "48px", "stack-md": "24px", "margin-mobile": "20px", "container-max": "1440px", "margin-desktop": "80px", "gutter": "24px" },
+              "fontFamily": {
+                "body-md": ["Inter"], "headline-md": ["Outfit"], "headline-lg-mobile": ["Outfit"], "label-sm": ["Inter"], "headline-xl": ["Outfit"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Outfit"]
+              },
+              "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}], "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden h-screen">
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 shadow-2xl shadow-black/40 h-20 flex justify-between items-center px-margin-desktop">
+    <div class="flex items-center gap-stack-md">
+        <span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">LuminaCuisine</span>
+    </div>
+    <div class="flex items-center gap-stack-md">
+        <div class="flex gap-base">
+            <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary-container/20 transition-all"><span class="material-symbols-outlined text-primary">notifications</span></button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary-container/20 transition-all"><span class="material-symbols-outlined text-primary">auto_awesome</span></button>
+        </div>
+        <div class="w-10 h-10 rounded-full border-2 border-primary/40 p-0.5 overflow-hidden">
+            <img class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtbaazTi7h45qeIBXLO_nGpEfv0Lpu56akm0X2bOp1XfQt7hSmaJ9bLJg5efqjRyk5sEXS9mUIu17jxuQAl6oIBSg26Vee8n1bwkS6JWUJTFtPG7tOBj0q9Tx9haTxxkP5x2lsWqqHtqCl0iz5w26umMqLq92ZK9LGHl6oGLcdj3btdDg0WuWkrXy5zuLMeZYfk24-9-R6ZW-8YRN6cIc8dHqKCno0WiMNdcOf_nlGU3_2W6_VrB1h0Mr_EWFFSSFlkVDv8hOTM1M"/>
+        </div>
+    </div>
+</header>
+
+<main class="flex h-full pt-20">
+    <!-- Sidebar: Preference Collection Form -->
+    <aside class="w-[400px] h-[calc(100vh-80px)] glass-panel border-r border-outline-variant/10 p-stack-md flex flex-col gap-stack-md overflow-y-auto custom-scrollbar z-40">
+        <div class="flex flex-col gap-2">
+            <h2 class="font-headline-md text-headline-md text-primary">Taste Engine</h2>
+            <p class="text-on-surface-variant text-label-sm">AI Preference Tuning</p>
+        </div>
+        <form id="preferenceForm" class="space-y-stack-md flex-1 flex flex-col">
+            <!-- Location (Dropdown as requested) -->
+            <div class="space-y-base">
+                <label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span> Current Base
+                </label>
+                <select id="locationSelect" required class="w-full bg-surface-container-high/40 border border-outline-variant/20 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none text-body-md glass">
+                    <option value="">Loading locations...</option>
+                </select>
+            </div>
+            
+            <!-- Budget -->
+            <div class="space-y-base">
+                <label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">payments</span> Budget Tier
+                </label>
+                <div class="flex gap-base" id="budgetToggles">
+                    <button type="button" data-budget="Low" class="budget-btn flex-1 py-2 rounded-xl border border-outline-variant/30 text-on-surface-variant hover:border-secondary hover:text-secondary transition-all">$</button>
+                    <button type="button" data-budget="Medium" class="budget-btn flex-1 py-2 rounded-xl border-2 border-secondary bg-secondary/10 text-secondary transition-all">$$</button>
+                    <button type="button" data-budget="High" class="budget-btn flex-1 py-2 rounded-xl border border-outline-variant/30 text-on-surface-variant hover:border-secondary hover:text-secondary transition-all">$$$</button>
+                </div>
+            </div>
+
+            <!-- Cuisines -->
+            <div class="space-y-base">
+                <label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">restaurant</span> Cuisines (Select multiple)
+                </label>
+                <div class="flex flex-wrap gap-2 max-h-32 overflow-y-auto custom-scrollbar" id="cuisineContainer">
+                    <span class="text-on-surface-variant text-label-sm">Loading cuisines...</span>
+                </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="space-y-base">
+                <div class="flex justify-between items-center">
+                    <label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">star</span> Min Rating
+                    </label>
+                    <span class="text-secondary font-bold" id="ratingDisplay">4.0</span>
+                </div>
+                <input id="ratingInput" class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" max="5" min="0" step="0.1" type="range" value="4.0"/>
+            </div>
+
+            <!-- Specific Requirements -->
+            <div class="space-y-base">
+                <label class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">edit_note</span> Specific Notes
+                </label>
+                <textarea id="requirementsInput" class="w-full bg-surface-container-high/40 border border-outline-variant/20 rounded-xl px-4 py-3 focus:ring-1 focus:ring-primary outline-none text-body-md h-24 resize-none" placeholder="e.g. Quiet environment, vegan-friendly, sunset views..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="mt-auto w-full py-4 bg-primary-container text-on-primary-container font-headline-md text-headline-md rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group relative overflow-hidden">
+                <span class="relative z-10" id="btnText">Get Recommendations</span>
+                <span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform" id="btnIcon">bolt</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </button>
+        </form>
+    </aside>
+
+    <!-- Main Content Area -->
+    <section class="flex-1 overflow-y-auto relative h-[calc(100vh-80px)] bg-[#0A0A0A] px-10 py-12 custom-scrollbar" id="mainContent">
+        <!-- Background Light Leak -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-tertiary/10 pointer-events-none"></div>
+        
+        <!-- Hero State -->
+        <div id="heroState" class="relative z-10 flex flex-col items-center justify-center min-h-full px-margin-desktop py-stack-lg text-center">
+            <div class="max-w-3xl w-full flex flex-col items-center gap-stack-md">
+                <div class="w-80 h-80 relative flex items-center justify-center">
+                    <div class="absolute inset-0 bg-primary/20 blur-[80px] rounded-full animate-glow"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[120px] text-primary drop-shadow-[0_0_20px_rgba(255,179,182,0.6)]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+                    </div>
+                </div>
+                <div class="space-y-base">
+                    <h1 class="font-headline-xl text-headline-xl text-on-surface leading-tight">Find your next<br/><span class="text-primary italic">flavor masterpiece.</span></h1>
+                    <p class="text-body-lg text-on-surface-variant max-w-xl mx-auto">Lumina AI analyzes thousands of flavor profiles and real-time reviews to curate dining experiences that match your exact metabolic mood.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="hidden relative z-20 flex flex-col items-center justify-center min-h-full text-center space-y-8 max-w-md mx-auto">
+            <div class="relative w-32 h-32 mx-auto">
+                <div class="absolute inset-0 rounded-full border-4 border-primary/20 animate-ping"></div>
+                <div class="relative w-32 h-32 rounded-full border-4 border-primary flex items-center justify-center bg-surface-container animate-pulse">
+                    <span class="material-symbols-outlined text-5xl text-primary" data-weight="fill">psychology</span>
+                </div>
+            </div>
+            <div class="space-y-4 w-full">
+                <h2 class="font-headline-md text-headline-md text-white">Refining your palate...</h2>
+                <div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+                    <div class="h-full bg-primary animate-[loading_1.5s_ease-in-out_infinite]" style="width: 40%"></div>
+                </div>
+                <p class="text-on-surface-variant animate-pulse">Synthesizing thousands of options with Groq AI...</p>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden relative z-20 flex flex-col items-center justify-center min-h-full text-center space-y-6">
+            <div class="w-24 h-24 rounded-full bg-surface-variant/30 flex items-center justify-center">
+                <span class="material-symbols-outlined text-5xl text-on-surface-variant/50">search_off</span>
+            </div>
+            <div class="space-y-2">
+                <h3 class="font-headline-md text-headline-md text-on-surface" id="emptyTitle">No perfect matches found</h3>
+                <p class="text-on-surface-variant max-w-xs mx-auto" id="emptyMessage">Your filters are currently too narrow for our AI to guarantee a match. Try broadening your location or budget.</p>
+            </div>
+        </div>
+
+        <!-- Results State -->
+        <div id="resultsState" class="hidden relative z-10 w-full max-w-6xl mx-auto">
+            <!-- Summary Banner -->
+            <div class="glass bg-surface-container/40 border border-outline-variant/20 rounded-[32px] p-8 mb-10 flex items-start gap-6 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-50"></div>
+                <div class="w-14 h-14 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary shrink-0 relative">
+                    <span class="material-symbols-outlined text-4xl" data-weight="fill">auto_awesome</span>
+                </div>
+                <div class="space-y-2 relative">
+                    <h3 class="font-headline-md text-headline-md text-on-surface">Curated matches for your palate</h3>
+                    <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl" id="summaryText"></p>
+                </div>
+            </div>
+
+            <!-- Filter Chips Row -->
+            <div class="flex items-center gap-3 mb-10 overflow-x-auto pb-4 custom-scrollbar" id="filterChips">
+                <!-- Generated via JS -->
+            </div>
+
+            <!-- Restaurant Grid -->
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-gutter" id="resultsGrid">
+                <!-- Generated via JS -->
+            </div>
+        </div>
+    </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
