@@ -1,6 +1,6 @@
 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
     ? 'http://localhost:8000/api' 
-    : 'https://<your-railway-domain>.up.railway.app/api'; // Replace with your actual Railway domain
+    : 'https://zomatorec.railway.internal/api';
 
 // State
 let selectedBudget = 'Medium';
